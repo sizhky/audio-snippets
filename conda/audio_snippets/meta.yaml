@@ -1,0 +1,55 @@
+package:
+  name: audio_snippets
+  version: 0.0.1
+source:
+  sha256: 1d6c862d158f9007636f0bdbc5304f4e5b372b14e05ae10867493cd6be843be1
+  url: https://files.pythonhosted.org/packages/10/f1/f7017383151f4930090fd9dc91ec31561d5c965d0da6f02496c945bd7889/audio_snippets-0.0.1.tar.gz
+about:
+  description: "# audio-snippets\n\n## Install\n```bash\npip install audio-snippets\n\
+    ```\n\n## Usage\nI suggest you use jupyter notebooks to take full advantage of\
+    \ all functions\n\n### Load Audio\n```python\nfrom audio_snippets import Sound\n\
+    s = Sound.from_path('/path/to/audio/file.mp3')\n```\n### Data\n```python\nprint(s.audio)\
+    \ # just the numpy array :D\nprint(s.Fs)    # sampling frequency\n```\n### Play\
+    \ it\n```python\ns.play()\ns.play(x=5)    # play the audio in 5x speed\n```\n\
+    ### Size of audio\n```python\nlen(s)         # Number of samples\ns.size     \
+    \    # Number of seconds of audio\ns.formatted_size \n# length of the audio in\
+    \ seconds/minutes/hours\n# E.g.  # 5.323 seconds ; 6.43 minutes ; 1.53 hours\n\
+    ```\n### Slice the audio\n```python\nt = s[3:5]     # Slices the audio from 3\
+    \ to 5 seconds\nt.play()\nt = s[:5]      # Slice first 5 seconds\nt = s[5:]  \
+    \    # Slice from 5 seconds onward\nt = s[::2]     # select every second sample\
+    \ (speeds the audio by 2x)\n```\n### Plot the waveform\n```python\ns.plot()  \
+    \           # interactive plotly\ns.plot(slice(5, 25)) # plot a slice of the waveform\n\
+    ```\n"
+  dev_url: https://sizhky.github.io
+  doc_url: https://sizhky.github.io
+  home: https://sizhky.github.io
+  license: Apache Software
+  license_family: APACHE
+  summary: Simple snippets for audio analysis
+build:
+  noarch: python
+  number: '0'
+  script: '{{ PYTHON }} -m pip install . -vv'
+extra:
+  recipe-maintainers:
+  - sizhky
+requirements:
+  host:
+  - pip
+  - python
+  - packaging
+  - librosa
+  - plotly
+  - torch_snippets
+  - soundfile
+  run:
+  - pip
+  - python
+  - packaging
+  - librosa
+  - plotly
+  - torch_snippets
+  - soundfile
+test:
+  imports:
+  - audio_snippets

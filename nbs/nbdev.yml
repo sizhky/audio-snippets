@@ -1,0 +1,9 @@
+project:
+  output-dir: docs
+
+website:
+  title: "audio_snippets"
+  site-url: "https://sizhky.github.io/audio_snippets/"
+  description: "Simple snippets for audio analysis"
+  repo-branch: master
+  repo-url: "https://github.com/sizhky/audio_snippets/tree/master/"
